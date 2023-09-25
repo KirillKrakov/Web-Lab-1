@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <meta name="viewport" content="initial-scale=1.0" />
+        <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
+        <link rel="icon" href="https://se.ifmo.ru/o/favicon/">
+        <link rel="stylesheet" href="styles_css/style.css">
+        <title>Л/Р №1 по вебу</title>
+    </head>
+    <body>
+        <div id="container" class="margin">
+            <div id="header" class="main-container margin">
+                <p>Лабораторная работа по веб-программированию №1</p>
+                <p>Краков Кирилл Контантинович P3231</p>
+                <p>Вариант № 1208</p>
+            </div>
+            <div id="main" class="margin">
+                <div id="choose" class="main-container margin">
+                    <p><b>Введите значения:</b></p>
+                    <p><i>Каждое</i> значение должно быть заполнено <i>корректно</i>!</p>
+                    <form action="actions_php/area_checker.php" method="get">
+                        <div id="x-select-container" class="select-container margin">
+                            <label for="x-select"><b>Введите X:</b></label>
+                            <div id="x-select" class="radio-group">
+                                <label><input onclick="newX()" type="radio" name="x-select" value="-3">-3</label>
+                                <label><input onclick="newX()" type="radio" name="x-select" value="-2">-2</label>
+                                <label><input onclick="newX()" type="radio" name="x-select" value="-1">-1</label>
+                                <label><input onclick="newX()" type="radio" name="x-select" value="0">0</label>
+                                <label><input onclick="newX()" type="radio" name="x-select" value="1">1</label>
+                                <label><input onclick="newX()" type="radio" name="x-select" value="2">2</label>
+                                <label><input onclick="newX()" type="radio" name="x-select" value="3">3</label>
+                                <label><input onclick="newX()" type="radio" name="x-select" value="4">4</label>
+                                <label><input onclick="newX()" type="radio" name="x-select" value="5">5</label>
+                            </div>
+                        </div>
+                        <div id="y-select-container" class="select-container margin">
+                            <label for="y-select"><b>Введите Y:</b></label>
+                            <div id="y-select-input" class="select-input-container">
+                                <input type="text" name="y-select" id="y-select" class="input-select" maxlength="8"
+                                       placeholder="Должно быть между -3 и 5" required />
+                                <span class="error" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <div id="r-select-container" class="select-container margin">
+                            <label for="r-select"><b>Введите R:</b></label>
+                            <div id="r-select-input" class="select-input-container">
+                                <input type="text" name="r-select" id="r-select" class="input-select" maxlength="8"
+                                       placeholder="Должно быть между 2 и 5" required />
+                                <span class="error" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <div id="submit-container" class="margin">
+                            <input type="submit" id="submit-button" value="Проверить попадание точки в область">
+                        </div>
+                    </form>
+                </div>
+                <div id="graph-container" class="main-container margin">
+                    <canvas id="graph" width="450px" height="450px"></canvas>
+                </div>
+                <div id="result-table-container" class="main-container margin">
+                    <table id="result-table">
+                        <thead>
+                            <tr>
+                                <th>X</th>
+                                <th>Y</th>
+                                <th>R</th>
+                                <th>Результат</th>
+                                <th>Выполнено в</th>
+                                <th>Время исполнения</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+            <div id="footer" class="main-container margin">
+                <p><b>Ссылка на репозиторий с лабораторной работой: </b></p>
+                <a href="https://github.com/KirillKrakov/Web-Lab-1"><img src="images/github.png" class="icon"></a>
+                <input onclick="clear_table()" type="button" id="clear-button" value="Очистить историю результатов">
+            </div>
+        </div>
+        <script src="scripts_js/validation.js"></script>
+        <script src="scripts_js/get-data.js"></script>
+        <script src="scripts_js/add-to-table.js"></script>
+        <script src="scripts_js/graphics.js"></script>
+    </body>
+</html>
